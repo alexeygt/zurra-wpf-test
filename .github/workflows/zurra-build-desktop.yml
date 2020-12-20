@@ -117,5 +117,5 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: Zurra Published Artifacts
+        name: Zurra-Build-${{ matrix.configuration }}
         path: ZurraWpf\bin\${{ matrix.configuration }}\netcoreapp3.1
