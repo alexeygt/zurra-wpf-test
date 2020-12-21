@@ -36,10 +36,10 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: Zurra Desktop Build Master/Staging 
+name: Zurra Desktop PR Check Master/Staging 
 
 on:
-  push:
+  pull_request:
     branches: [master, staging]
 
 jobs:
@@ -112,8 +112,8 @@ jobs:
 #       run: Remove-Item -path $env:Wap_Project_Directory\$env:Signing_Certificate
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-artifact
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: Zurra-Build-${{ matrix.configuration }}
-        path: ZurraWpf\bin\${{ matrix.configuration }}\netcoreapp3.1
+    # - name: Upload build artifacts
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: Zurra-Build-${{ matrix.configuration }}
+    #     path: ZurraWpf\bin\${{ matrix.configuration }}\netcoreapp3.1
